@@ -1,0 +1,30 @@
+# =============================================================================
+# Grok Build Configuration — Org Template
+# =============================================================================
+# This is the baseline config.toml for new installations inside the org.
+#
+# Usage:
+#   - Copy to ~/.grok/config.toml (merge if the user already has local changes).
+#
+# Philosophy:
+#   - Prefer the "adaptive" agent profile by default (see agents/adaptive.md).
+#   - Heavy use of internal MCP tools is expected — agents should discover
+#     capabilities early via search_tool when servers are announced.
+# =============================================================================
+
+[cli]
+installer = "internal"
+
+[ui]
+max_thoughts_width = 120
+yolo = true
+compact_mode = false
+
+[agent]
+# Recommended default for day-to-day work. See agents/adaptive.md in this
+# template (and the internal ~/.grok/agents/adaptive.md) for the full profile.
+name = "adaptive"
+
+[mcp_servers.etc]
+url = "localhost"
+enabled = true
