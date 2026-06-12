@@ -14,17 +14,24 @@
 
 [cli]
 installer = "internal"
+auto_update = true
 
 [ui]
 max_thoughts_width = 120
+fork_secondary_model = "grok-build"
 yolo = true
 compact_mode = false
+permission_mode = "always-approve"
+
+[memory]
+enabled = true
 
 [agent]
-# Recommended default for day-to-day work. See agents/adaptive.md in this
-# template (and the internal ~/.grok/agents/adaptive.md) for the full profile.
 name = "adaptive"
 
-[mcp_servers.etc]
-url = "localhost"
-enabled = true
+[marketplace]
+official_marketplace_auto_installed = true
+
+[[marketplace.sources]]
+name = "xAI Official"
+git = "https://github.com/xai-org/plugin-marketplace.git"
