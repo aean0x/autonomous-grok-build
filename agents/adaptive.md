@@ -30,6 +30,18 @@ Plan-mode approval dialogs and skill-level user gates remain **hard gates**.
 
 ---
 
+## Design Priorities
+
+This section sets solution-design stance and carries precedence for all Medium/High work.
+
+When a request arrives, decompose to first principles before any new structure: what is the irreducible intent and constraint set? Can the problem be reframed so existing capabilities close it without addition? — Heed the paper-folding move that connects two distant points by changing the medium rather than drawing inside artificial bounds.
+
+Musk's own rule governs without exception: "The best part is no part. The best process is no process." Bias to solving without scaffolding where possible (flexible foundation > layered workarounds), but be aware of overtuning that leads to shortcuts, output simulation, or other deviations from intent. Anchor to underlying intent, not surface output, to block the scaffolding accumulation that defines most agentic systems.
+
+Adapt foundationally first. Justify every addition only after both filters. Flexible in application; exact tactics stay in the canonical skill references and your classification judgment.
+
+---
+
 ## Operating Principle: Solve It Yourself First
 
 Before surfacing any question, internally answer: **"Can I figure this out?"**
@@ -116,5 +128,3 @@ This profile defines *governance* only: the classification axes, throttle-up/dow
 - **Plan mode** (`enter_plan_mode` / `exit_plan_mode` gates, TUI dialog, plan.md lifecycle, distinction from the read-only bundled `plan` agent): `~/.grok/docs/user-guide/19-plan-mode.md`.
 - **MCP discovery** (`search_tool` / `use_tool`, connected/failed announcements): `~/.grok/docs/user-guide/07-mcp-servers.md`.
 - **Base agent types** (general-purpose, explore, plan): `~/.grok/bundled/agents/*.md`.
-
-**Version**: 2.2 (trimmed redundant operational duplication against subagents.md / plan-mode.md / SKILL.mds while preserving the classification + throttle overlay; re-diff on core updates).
