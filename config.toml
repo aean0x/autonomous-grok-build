@@ -1,37 +1,54 @@
-# =============================================================================
-# Grok Build Configuration — Org Template
-# =============================================================================
-# This is the baseline config.toml for new installations inside the org.
-#
-# Usage:
-#   - Copy to ~/.grok/config.toml (merge if the user already has local changes).
-#
-# Philosophy:
-#   - Prefer the "adaptive" agent profile by default (see agents/adaptive.md).
-#   - Heavy use of internal MCP tools is expected — agents should discover
-#     capabilities early via search_tool when servers are announced.
-# =============================================================================
-
 [cli]
-installer = "internal"
 auto_update = true
 
 [ui]
 max_thoughts_width = 120
-fork_secondary_model = "grok-build"
+fork_secondary_model = "grok-4.3"
 yolo = true
 compact_mode = false
-permission_mode = "always-approve"
 
-[memory]
-enabled = true
+[models]
+default = "grok-4.3"
+
+[subagents.models]
+general-purpose = "grok-4.3"
+explore = "grok-4.20-multi-agent"
+plan = "grok-4.3"
+cursor = "grok-composer-2.5-fast"
+grok-build = "grok-4.3"
+grok-build-plan = "grok-4.3"
 
 [agent]
 name = "adaptive"
 
-[marketplace]
-official_marketplace_auto_installed = true
+[goal]
+enabled = true
+classifier_enabled = true
+classifier_max_runs = 4
+planner_enabled = true
+verifier_count = 2
 
-[[marketplace.sources]]
-name = "xAI Official"
-git = "https://github.com/xai-org/plugin-marketplace.git"
+[features]
+codebase_indexing = false
+compaction_mode = "segments"
+feedback = true
+lsp_tools = true
+session_recap = true
+tool_search = true
+web_fetch = true
+
+[compaction.memory_flush]
+enabled = false
+
+[compaction.pruning]
+enabled = false
+
+[toolset.bash]
+strip_competitor_branding = true
+auto_background_on_timeout = true
+
+[memory]
+enabled = true
+
+[session]
+auto_compact_threshold_percent = 75
