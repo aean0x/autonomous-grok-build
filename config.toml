@@ -3,7 +3,7 @@ auto_update = true
 
 [ui]
 max_thoughts_width = 120
-fork_secondary_model = "grok-4.3"
+fork_secondary_model = "grok-build"
 yolo = true
 compact_mode = false
 
@@ -12,7 +12,7 @@ default = "grok-4.3"
 
 [subagents.models]
 general-purpose = "grok-4.3"
-explore = "grok-4.20-multi-agent"
+explore = "grok-composer-2.5-fast"
 plan = "grok-4.3"
 cursor = "grok-composer-2.5-fast"
 grok-build = "grok-4.3"
