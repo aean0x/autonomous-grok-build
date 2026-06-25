@@ -8,15 +8,15 @@ yolo = true
 compact_mode = false
 
 [models]
-default = "grok-4.3"
+default = "grok-composer-2.5-fast"
 
 [subagents.models]
-general-purpose = "grok-4.3"
+general-purpose = "grok-composer-2.5-fast"
 explore = "grok-composer-2.5-fast"
-plan = "grok-4.3"
+plan = "grok-composer-2.5-fast"
 cursor = "grok-composer-2.5-fast"
-grok-build = "grok-4.3"
-grok-build-plan = "grok-4.3"
+grok-build = "grok-composer-2.5-fast"
+grok-build-plan = "grok-composer-2.5-fast"
 
 [agent]
 name = "adaptive"
