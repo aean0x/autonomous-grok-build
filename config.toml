@@ -1,22 +1,31 @@
 [cli]
 auto_update = true
-
-[ui]
-max_thoughts_width = 120
-fork_secondary_model = "grok-build"
-yolo = true
-compact_mode = false
+installer = "internal"
 
 [models]
-default = "grok-composer-2.5-fast"
+default = "grok-4.5"
+interactive_coding = "grok-composer-2.5-fast"
+long_running_agent = "grok-composer-2.5-fast"
+planning_review = "grok-4.5"
+session_summary = "grok-4.5"
+web_search = "grok-4.5"
+image_description = "grok-4.5"
+image_vision = "grok-4.5"
+fallback_coding = "grok-composer-2.5-fast"
 
 [subagents.models]
 general-purpose = "grok-composer-2.5-fast"
 explore = "grok-composer-2.5-fast"
-plan = "grok-composer-2.5-fast"
 cursor = "grok-composer-2.5-fast"
-grok-build = "grok-composer-2.5-fast"
-grok-build-plan = "grok-composer-2.5-fast"
+plan = "grok-4.5"
+grok-build-plan = "grok-4.5"
+grok-build = "grok-4.5"
+
+[ui]
+max_thoughts_width = 120
+fork_secondary_model = "grok-4.5"
+yolo = true
+compact_mode = false
 
 [agent]
 name = "adaptive"
@@ -24,9 +33,9 @@ name = "adaptive"
 [goal]
 enabled = true
 classifier_enabled = true
-classifier_max_runs = 4
+classifier_max_runs = 6
 planner_enabled = true
-verifier_count = 2
+verifier_count = 3
 
 [features]
 codebase_indexing = false
